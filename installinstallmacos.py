@@ -68,7 +68,7 @@ DEFAULT_SUCATALOGS = {
     '21': 'https://swscan.apple.com/content/catalogs/others/'
           'index-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9'
           '-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog',
-    'default': 'https://gist.githubusercontent.com/boerso/c465469dde731c8db0f056840ea228cd/raw/'
+    'default': 'https://gist.githubusercontent.com/boerso/02f5d22008c24d39f9aa27ade56887f8/raw'
 }
 
 SEED_CATALOGS_PLIST = (
@@ -559,10 +559,6 @@ def main():
     parser.add_argument('--ignore-cache', action='store_true',
                         help='Ignore any previously cached files.')
     args = parser.parse_args()
-
-    if os.getuid() != 0:
-        sys.exit('This command requires root (to install packages), so please '
-                 'run again with sudo or as root.')
 
     current_dir = os.getcwd()
     if os.path.expanduser("~") in current_dir:
